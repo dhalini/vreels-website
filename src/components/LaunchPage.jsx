@@ -297,10 +297,11 @@ const LaunchPage = () => {
                             </p>
                             <h2>OTP</h2>
                             <p>
-                                For OTP, a potential subscriber will receive an initial text message containing a one-time password (OTP) to verify their identity.
+                                For OTP, a potential subscriber will receive an initial text message containing a one-time password (OTP) to verify their identity. Standard messaging rates may apply.
                             </p>
                             <p>
-                                For more information, please contact us at support@vreels.com.
+                                
+                                For more information, please contact us at mnkllc@vreels.com.
                             </p>
                         </div>
                     )}
