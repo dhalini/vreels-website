@@ -295,9 +295,9 @@ const LaunchPage = () => {
                             <p>
                                 A potential subscriber can provide their consent to opt-in via SMS by texting the keyword provided to the short code. Standard messaging rates may apply.
                             </p>
-                            <h2>2FA/OTP</h2>
+                            <h2>OTP</h2>
                             <p>
-                                For 2FA/OTP, a potential subscriber will receive an initial text message containing a one-time password (OTP) to verify their identity.
+                                For OTP, a potential subscriber will receive an initial text message containing a one-time password (OTP) to verify their identity.
                             </p>
                             <p>
                                 For more information, please contact us at support@vreels.com.
