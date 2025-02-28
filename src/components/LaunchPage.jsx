@@ -272,6 +272,12 @@ const LaunchPage = () => {
                             mnkllc@vreels.com
                         </a>
                     </div>
+                    <div className="terms-link animate-fade-in">
+                         By using this service, you agree to our{' '}
+                         <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
+                         Terms and Conditions
+                         </a>.
+                    </div>
 
                     <div className="social-links animate-fade-in">
                         <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
