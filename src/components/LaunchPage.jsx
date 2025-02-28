@@ -5,6 +5,7 @@ import './LaunchPage.css';
 import PropTypes from 'prop-types';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from './firebaseConfig';
+
 const LaunchPage = () => {
     const [countdown, setCountdown] = useState({
         days: '00',
@@ -13,11 +14,12 @@ const LaunchPage = () => {
         seconds: '00'
     });
     const [email, setEmail] = useState('');
+    const [isTermsExpanded, setIsTermsExpanded] = useState(false); // State for expandable Terms and Conditions
 
     // Email validation regex
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-    // Add these toast config objects at the top of the component
+    // Toast config
     const toastConfig = {
         position: "top-center",
         autoClose: 3000,
@@ -56,7 +58,6 @@ const LaunchPage = () => {
     );
 
     async function addEmail(email) {
-        
         await addDoc(collection(db, "emails"), { email });
     }
 
@@ -188,8 +189,7 @@ const LaunchPage = () => {
         }
 
         // If email is valid, show success message
-        // console.log('Submitted email:', email);
-        addEmail(email)
+        addEmail(email);
         toast.success(
             <ToastMessage 
                 icon="✓"
@@ -272,12 +272,38 @@ const LaunchPage = () => {
                             mnkllc@vreels.com
                         </a>
                     </div>
+
+                    {/* Terms and Conditions Section */}
                     <div className="terms-link animate-fade-in">
-                         By using this service, you agree to our{' '}
-                         <a href="/terms-and-conditions" target="_blank" rel="noopener noreferrer">
-                         Terms and Conditions
-                         </a>.
+                        By using this service, you agree to our{' '}
+                        <button 
+                            onClick={() => setIsTermsExpanded(!isTermsExpanded)} 
+                            style={{ background: 'none', border: 'none', color: '#4ecdc4', cursor: 'pointer' }}
+                        >
+                            Terms and Conditions
+                        </button>.
                     </div>
+
+                    {/* Expandable Terms and Conditions Content */}
+                    {isTermsExpanded && (
+                        <div className="terms-content">
+                            <h1>Terms and Conditions</h1>
+                            <p>
+                                By using this service, you agree to the following terms:
+                            </p>
+                            <h2>Opt-In via SMS</h2>
+                            <p>
+                                A potential subscriber can provide their consent to opt-in via SMS by texting the keyword provided to the short code. Standard messaging rates may apply.
+                            </p>
+                            <h2>2FA/OTP</h2>
+                            <p>
+                                For 2FA/OTP, a potential subscriber will receive an initial text message containing a one-time password (OTP) to verify their identity.
+                            </p>
+                            <p>
+                                For more information, please contact us at support@vreels.com.
+                            </p>
+                        </div>
+                    )}
 
                     <div className="social-links animate-fade-in">
                         <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
@@ -290,4 +316,4 @@ const LaunchPage = () => {
     );
 };
 
-export default LaunchPage; 
+export default LaunchPage;
