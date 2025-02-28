@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import routing components
 import App from './App';
 import TermsAndConditions from './components/TermsAndConditions'; // Import the TermsAndConditions component
-import './index.css'; // Ensure your global styles are imported
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
