@@ -152,4 +152,40 @@ canvas {
 
 .notify-form input.error {
     border-color: #ff5757;
-} 
+}
+
+/* Terms and Conditions Link */
+.terms-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #fff;
+    text-align: center;
+}
+
+.terms-link a {
+    color: #4ecdc4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.terms-link a:hover {
+    color: #45b1ac;
+    text-decoration: underline;
+}
+
+/* Fade-in Animation */
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
