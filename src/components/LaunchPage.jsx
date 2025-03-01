@@ -273,6 +273,11 @@ const LaunchPage = () => {
                         </a>
                     </div>
 
+                    <div className="social-links animate-fade-in">
+                        <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
+                        <a href="#" className="social-icon"><i className="fab fa-instagram"></i></a>
+                        <a href="#" className="social-icon"><i className="fab fa-linkedin"></i></a>
+                    </div>
                     {/* Terms and Conditions Section */}
                     <div className="terms-link animate-fade-in">
                         By using this service, you agree to our{' '}
@@ -305,12 +310,6 @@ const LaunchPage = () => {
                             </p>
                         </div>
                     )}
-
-                    <div className="social-links animate-fade-in">
-                        <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
-                        <a href="#" className="social-icon"><i className="fab fa-instagram"></i></a>
-                        <a href="#" className="social-icon"><i className="fab fa-linkedin"></i></a>
-                    </div>
                 </div>
             </main>
         </>
