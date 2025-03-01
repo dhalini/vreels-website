@@ -306,7 +306,8 @@ const LaunchPage = () => {
                             </p>
                             <br />
                             <p>
-                                For more information, please contact us at mnkllc@vreels.com.
+                                For more information, please contact us at{' '}
+                                <span className="highlight-email">mnkllc@vreels.com</span>.
                             </p>
                         </div>
                     )}

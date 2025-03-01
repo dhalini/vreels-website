@@ -203,6 +203,17 @@ canvas {
     color: #fff;
 }
 
+.highlight-email {
+    color: #4ecdc4; /* Use your primary color */
+    font-weight: bold; /* Make it bold */
+    text-decoration: underline; /* Add underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.highlight-email:hover {
+    color: #45b1ac; /* Change color on hover */
+}
+
 /* Fade-in Animation */
 .animate-fade-in {
     opacity: 0;
