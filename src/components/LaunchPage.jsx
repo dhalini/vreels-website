@@ -13,11 +13,11 @@ const LaunchPage = () => {
         minutes: '00',
         seconds: '00'
     });
-    const [email, setEmail] = useState('');
-    const [isTermsExpanded, setIsTermsExpanded] = useState(false); // State for expandable Terms and Conditions
+    const [phoneNumber, setPhoneNumber] = useState('');
+    const [isTermsChecked, setIsTermsChecked] = useState(false); // State for checkbox
 
-    // Email validation regex
-    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    // Phone number validation regex (simple example)
+    const phoneRegex = /^[0-9]{10}$/;
 
     // Toast config
     const toastConfig = {
@@ -57,8 +57,8 @@ const LaunchPage = () => {
         </div>
     );
 
-    async function addEmail(email) {
-        await addDoc(collection(db, "emails"), { email });
+    async function addPhoneNumber(phoneNumber) {
+        await addDoc(collection(db, "phoneNumbers"), { phoneNumber });
     }
 
     // Add PropTypes
@@ -162,8 +162,8 @@ const LaunchPage = () => {
         // Dismiss all existing toasts before showing new one
         toast.dismiss();
         
-        // Check if email is empty
-        if (!email.trim()) {
+        // Check if phone number is empty
+        if (!phoneNumber.trim()) {
             toast.error(
                 <ToastMessage 
                     icon="⚠️"
@@ -175,21 +175,21 @@ const LaunchPage = () => {
             return;
         }
         
-        // Then check if email is valid
-        if (!emailRegex.test(email)) {
+        // Then check if phone number is valid
+        if (!phoneRegex.test(phoneNumber)) {
             toast.error(
                 <ToastMessage 
                     icon="⚠️"
                     background="#FF4B4B"
-                    message="Please enter a valid email address"
+                    message="Please enter a valid phone number"
                 />, 
                 toastConfig
             );
             return;
         }
 
-        // If email is valid, show success message
-        addEmail(email);
+        // If phone number is valid, show success message
+        addPhoneNumber(phoneNumber);
         toast.success(
             <ToastMessage 
                 icon="✓"
@@ -199,7 +199,7 @@ const LaunchPage = () => {
             toastConfig
         );
 
-        setEmail('');
+        setPhoneNumber('');
     };
 
     return (
@@ -258,12 +258,50 @@ const LaunchPage = () => {
                         <form onSubmit={handleSubmit}>
                             <input 
                                 type="text"
-                                placeholder="Enter your email" 
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Enter your phone number" 
+                                value={phoneNumber}
+                                onChange={(e) => setPhoneNumber(e.target.value)}
                             />
-                            <button type="submit">Notify Me</button>
+                            <button type="submit" disabled={!isTermsChecked}>Subscribe Now</button>
                         </form>
+                    </div>
+
+                  
+
+                    <div className="terms-checkbox animate-fade-in">
+                        <input 
+                            type="checkbox" 
+                            id="terms-checkbox" 
+                            checked={isTermsChecked} 
+                            onChange={(e) => setIsTermsChecked(e.target.checked)} 
+                        />
+                        <label htmlFor="terms-checkbox">
+                            By using this service, I agree to the below {' '}
+                            <span className="highlight-email">Terms and Conditions</span>.
+                        </label>
+                    </div>
+
+                    {/* Opt-In via SMS and OTP Content */}
+                    <div className="terms-paragraph animate-fade-in">
+                      {/*  <h2>Opt-In via SMS</h2>
+                        <p>
+                            A potential subscriber can provide their consent to opt-in via SMS by texting the keyword provided to the short code. Standard messaging rates may apply.
+                        </p>
+                        <h2>OTP</h2>
+                        <p>
+                            For OTP, a potential subscriber will receive an initial text message containing a one-time password (OTP) to verify their identity. Standard messaging rates may apply.
+                        </p>
+                        <br /> */}
+                        <p>I agree to receive SMS through text messages to the phone number which I entered above. I understand that I will receive a text message containing a one-time password (OTP) to verify my identity. Standard data and msg rates may apply.  
+
+                        </p>
+                        <br />
+                        <p>
+                            For more information, please contact us at{' '}
+                            <span className="highlight-email">mnkllc@vreels.com</span>.
+                        </p>
+                        <br />
+                        <br />
                     </div>
 
                     <div className="contact-info animate-fade-in">
@@ -278,39 +316,6 @@ const LaunchPage = () => {
                         <a href="#" className="social-icon"><i className="fab fa-instagram"></i></a>
                         <a href="#" className="social-icon"><i className="fab fa-linkedin"></i></a>
                     </div>
-                    {/* Terms and Conditions Section */}
-                    <div className="terms-link animate-fade-in">
-                        By using this service, you agree to our{' '}
-                        <button 
-                            onClick={() => setIsTermsExpanded(!isTermsExpanded)} 
-                            style={{ background: 'none', border: 'none', color: '#4ecdc4', cursor: 'pointer' }}
-                        >
-                            Terms and Conditions
-                        </button>.
-                    </div>
-
-                    {/* Expandable Terms and Conditions Content */}
-                    {isTermsExpanded && (
-                        <div className="terms-content">
-                            <h1>Terms and Conditions</h1>
-                            <p>
-                                By using this service, you agree to the following terms:
-                            </p>
-                            <h2>Opt-In via SMS</h2>
-                            <p>
-                                A potential subscriber can provide their consent to opt-in via SMS by texting the keyword provided to the short code. Standard messaging rates may apply.
-                            </p>
-                            <h2>OTP</h2>
-                            <p>
-                                For OTP, a potential subscriber will receive an initial text message containing a one-time password (OTP) to verify their identity. Standard messaging rates may apply.
-                            </p>
-                            <br />
-                            <p>
-                                For more information, please contact us at{' '}
-                                <span className="highlight-email">mnkllc@vreels.com</span>.
-                            </p>
-                        </div>
-                    )}
                 </div>
             </main>
         </>
