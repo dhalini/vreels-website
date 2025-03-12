@@ -193,7 +193,7 @@ canvas {
     margin-top: 20px;
     font-size: 0.8rem; /* Small font size */
     color: #fff;
-    text-align: center;
+    text-align: justify;
     opacity: 0.8; /* Slightly transparent */
 }
 
@@ -268,3 +268,56 @@ canvas {
     color: #4ecdc4; /* Change color on hover */
     transform: scale(1.1); /* Slightly enlarge on hover */
 }
+.terms-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: white;
+}
+
+.terms-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4ecdc4;
+}
+
+.terms-page h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #4ecdc4;
+}
+
+.terms-page p {
+    margin-bottom: 15px;
+}
+
+.terms-page strong {
+    font-weight: bold;
+}
+
+.terms-page a {
+    color: #4ecdc4;
+    text-decoration: none;
+}
+
+.terms-page a:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    background-color: #4ecdc4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    background-color: #3aa89e;
+}
+

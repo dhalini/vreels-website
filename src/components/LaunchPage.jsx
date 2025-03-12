@@ -5,6 +5,8 @@ import './LaunchPage.css';
 import PropTypes from 'prop-types';
 import { addDoc, collection } from 'firebase/firestore';
 import { db } from './firebaseConfig';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+
 
 const LaunchPage = () => {
     const [countdown, setCountdown] = useState({
@@ -275,14 +277,24 @@ const LaunchPage = () => {
                             checked={isTermsChecked} 
                             onChange={(e) => setIsTermsChecked(e.target.checked)} 
                         />
-                        <label htmlFor="terms-checkbox">
+                      {/*  <label htmlFor="terms-checkbox">
                             By using this service, I agree to the below {' '}
                             <span className="highlight-email">Terms and Conditions</span>.
                         </label>
-                    </div>
+                    </div> */}
+
+                            <label htmlFor="terms-checkbox">
+                                By using this service, I agree to the organization {' '}
+                                <Link to="/terms-and-conditions" className="highlight-email">
+                                Terms and Conditions
+                                </Link> and <Link to="/privacy-policy" className="highlight-email">
+                                Privacy Policy
+                                </Link> .
+                            </label>
+                        </div>
 
                     {/* Opt-In via SMS and OTP Content */}
-                    <div className="terms-paragraph animate-fade-in">
+                     <div className="terms-paragraph animate-fade-in"> 
                       {/*  <h2>Opt-In via SMS</h2>
                         <p>
                             A potential subscriber can provide their consent to opt-in via SMS by texting the keyword provided to the short code. Standard messaging rates may apply.
@@ -292,24 +304,24 @@ const LaunchPage = () => {
                             For OTP, a potential subscriber will receive an initial text message containing a one-time password (OTP) to verify their identity. Standard messaging rates may apply.
                         </p>
                         <br /> */}
-                        <p>I agree to receive SMS through text messages to the phone number which I entered above. I understand that I will receive a text message containing a one-time password (OTP) to verify my identity. Standard data and msg rates may apply.  
+                       {/*  <p>I agree to receive SMS through text messages to the phone number which I entered above. I understand that I will receive a text message containing a one-time password (OTP) to verify my identity. Standard data and msg rates may apply.  
 
                         </p>
-                        <br />
+                        <br /> */}
                         <p>
                             For more information, please contact us at{' '}
                             <span className="highlight-email">mnkllc@vreels.com</span>.
                         </p>
                         <br />
-                        <br />
-                    </div>
+                        
+                    </div> 
 
-                    <div className="contact-info animate-fade-in">
+                   {/*  <div className="contact-info animate-fade-in">
                         <a href="mailto:mnkllc@vreels.com" className="email-link">
                             <i className="fas fa-envelope"></i>
                             mnkllc@vreels.com
                         </a>
-                    </div>
+                    </div> */}
 
                     <div className="social-links animate-fade-in">
                         <a href="#" className="social-icon"><i className="fab fa-twitter"></i></a>
