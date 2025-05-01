@@ -152,4 +152,172 @@ canvas {
 
 .notify-form input.error {
     border-color: #ff5757;
-} 
+}
+
+/* Terms and Conditions Checkbox */
+.terms-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.terms-checkbox input[type="checkbox"] {
+    width: 20px; /* Increase checkbox size */
+    height: 20px; /* Increase checkbox size */
+    margin-right: 10px; /* Add space between checkbox and label */
+    cursor: pointer;
+    accent-color: #4ecdc4; /* Change checkbox color */
+}
+
+.terms-checkbox label {
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.terms-checkbox label a {
+    color: #4ecdc4;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.terms-checkbox label a:hover {
+    text-decoration: underline;
+}
+
+/* Terms and Conditions Paragraph */
+.terms-paragraph {
+    margin-top: 20px;
+    font-size: 0.8rem; /* Small font size */
+    color: #fff;
+    text-align: justify;
+    opacity: 0.8; /* Slightly transparent */
+}
+
+.terms-paragraph h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+    margin-bottom: 2px;
+    color: #fff;
+}
+
+.terms-paragraph p {
+    text-align: left; /* Left alignment */
+    margin-top: 10px; /* Space above the text */
+    font-size: 0.8rem; /* Small font size */
+    color: #fff; /* White text */
+    opacity: 0.8; /* Slightly transparent */
+    line-height: 1.5; /* Improve readability */
+    padding: 0 20px; /* Add padding for better spacing */
+    max-width: 600px; /* Limit width for better readability */
+    margin-left: 125px; /* Center the block horizontally */
+    margin-right: auto; /* Center the block horizontally */
+}
+
+.highlight-email {
+    color: #4ecdc4; /* Use your primary color */
+    font-weight: bold; /* Make it bold */
+    text-decoration: underline; /* Add underline */
+    transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+.highlight-email:hover {
+    color: #45b1ac; /* Change color on hover */
+}
+
+/* Fade-in Animation */
+.animate-fade-in {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-info {
+    margin-top: 10px; /* Reduce space above email */
+    margin-bottom: 2px
+}
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between icons */
+    margin-top: 2px; /* Adjust as needed */
+}
+
+.social-links .social-icon {
+    font-size: 1.5rem; /* Reduce icon size (adjust as needed) */
+    color: #fff; /* Icon color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effects */
+}
+
+.social-links .social-icon:hover {
+    color: #4ecdc4; /* Change color on hover */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+.terms-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: white;
+}
+
+.terms-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #4ecdc4;
+}
+
+.terms-page h2 {
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    color: #4ecdc4;
+}
+
+.terms-page p {
+    margin-bottom: 15px;
+}
+
+.terms-page strong {
+    font-weight: bold;
+}
+
+.terms-page a {
+    color: #4ecdc4;
+    text-decoration: none;
+}
+
+.terms-page a:hover {
+    text-decoration: underline;
+}
+
+.back-button {
+    background-color: #4ecdc4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.back-button:hover {
+    background-color: #3aa89e;
+}
+
